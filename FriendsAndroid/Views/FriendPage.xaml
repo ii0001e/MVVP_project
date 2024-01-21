@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FriendsAndroid.Views.FriendPage">
+    <StackLayout>
+        <StackLayout x:Name="friendStack">
+            <Label Text="Name" />
+            <Entry Text="{Binding Name}" FontSize="Medium"/>
+            <Label Text="Email" />
+            <Entry Text="{Binding Email}" FontSize="Medium"/>
+            <Label Text="Phone" />
+            <Entry Text="{Binding Phone}" FontSize="Medium"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button
+                Text="Add"
+                Command="{Binding ListViewModel.SaveFriendCommand}"
+                CommandParameter="{Binding}"/>
+            <Button
+                Text="Delete"
+                Command="{Binding ListViewModel.DeleteFriendCommand}"
+                CommandParameter="{Binding}"/>
+            <Button
+                Text="Back"
+                Command="{Binding ListViewModel.BackCommand}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
